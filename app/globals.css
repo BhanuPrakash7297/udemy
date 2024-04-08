@@ -75,11 +75,22 @@
   }
 } */
 
-*{
-  padding:0;
-  margin:0;
-  box-sizing:0;
+@layer utilities{
+  .flex-center{
+    @apply flex justify-center items-center;
+  }
+  .p-regular-16 {
+       @apply text-[16px] font-normal leading-[24px];
+   }
 }
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
 
 .ud-nav-li{
   list-style: none;

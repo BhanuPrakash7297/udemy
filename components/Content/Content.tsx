@@ -10,6 +10,7 @@ import { TabContent } from '../TabContent/TabContent';
 import { ChangeEvent } from 'react';
 import Link from 'next/link';
 
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 

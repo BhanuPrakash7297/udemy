@@ -16,7 +16,7 @@ export const Hero = () => {
     url:'/hero_image_3.jpg'
 }]
   return (
-    <div className="her0-content-wrapper flex-col mt-5">
+    <div className="her0-content-wrapper flex-col">
          <div className="nav-container flex justify-center shadow-md relative" style={{borderTop:'1px solid #d1d7dc'}}>
              <ul className="flex p-3 text-sm">
                 <li className="ud-nav-li">Development</li>

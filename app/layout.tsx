@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar/navbar";
+import { Navbar } from "@/components/Navbar/Navbar";
 import { Hero } from "@/components/Hero/hero";
 import { Card } from "@/components/Card/card";
 import { SliderCourse } from "@/components/courseSlider/slidercourse";
@@ -23,10 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
+        {/* <Navbar/>
         <Hero/>
         <Content/>
-       <SponserCard/>
+       <SponserCard/> */}
+        {children}
       </body>
     </html>
   );

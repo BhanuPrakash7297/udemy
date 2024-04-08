@@ -1,7 +1,7 @@
 "use client"
 
 
-import { Bell, Heart, Search, ShoppingCart } from "lucide-react";
+import { Bell, Heart, ShoppingCart } from "lucide-react";
 import { Form,FormField,FormItem,FormLabel,FormControl,FormDescription,FormMessage} from "../ui/form";
 import { Input } from "../ui/input";
 import { z } from "zod"
@@ -9,6 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { useState } from "react";
 import { Separator } from "../ui/separator";
+import Search from "../Search";
+import Dropdown from "../Dropdown";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -19,44 +21,35 @@ const formSchema = z.object({
 export const Navbar = () => {
    const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle search functionality here
-    console.log('Searching for:', searchTerm);
-  };
-
   return (
-<div className="flex-col">
-    <div className="search container w-full flex items-center justify-between p-3"> 
-    <span>Udemy CLone</span>
-    <span>Categories</span>
-         <form className="flex items-center border border-gray-300 p-4 w-[610px] h-[46px]" style={{borderRadius:'9999px', backgroundColor:'#f7f9fa'}}>
-            <button type="submit" className="px-4 py-2 rounded-md">
-       <Search></Search>
-      </button>
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={handleChange}
-        className="px-3 py-2 rounded-md focus:outline-none focus:border-blue-500 w-full"
-        style={{backgroundColor:'transparent'}}
-      />
-      
-    </form>
-    <span>Udemy business</span>
-    <span>Tech on Udemy</span>
-    <span>My Learning</span>
-
-    <span><ShoppingCart/></span>
-    <span><Bell></Bell></span>
-    <span><Heart></Heart></span>
-    <span>Profile</span>
+    <div className="flex-col">
+      <div
+        className="search container w-full flex items-center gap-5 px-3 py-2 bg-[#fff] leading-none"
+        style={{ fontSize: "14px" }}
+      >
+        <div>Udemy CLone</div>
+        <div>Categories</div>
+        <Search placeholder="Search Course...." />
+        <div>
+          <Dropdown firstName="udemy" lastName="Business" />
+        </div>
+        <div>
+          <Dropdown firstName="Tech" lastName="Udemy" />
+        </div>
+        <div>My Learning</div>
+        <div className="flex justify-center items-center gap-5">
+          <div>
+            <Heart />
+          </div>
+          <div>
+            <ShoppingCart />
+          </div>
+          <div>
+            <Bell />
+          </div>
+          <div>Profile</div>
+        </div>
+      </div>
     </div>
-</div>
   );
 };
