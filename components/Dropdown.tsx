@@ -11,10 +11,12 @@ const Dropdown = ({firstName,lastName}:{firstName:string,lastName:string}) => {
   return (
     <HoverCard>
       <HoverCardTrigger>
-        <Link href={'/'} className='flex gap-1'>
+        <div>
+          <Link href={"/"} className="flex gap-1">
             <span>{firstName}</span>
             <span>{lastName}</span>
-        </Link>
+          </Link>
+        </div>
       </HoverCardTrigger>
       <HoverCardContent className="mt-8 bg-white">
         <div className="flex flex-col gap-4 p-1">

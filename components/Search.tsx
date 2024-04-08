@@ -10,7 +10,7 @@ const Search = ({
 
     const [query, setQuery] = useState("");
   return (
-    <div className="flex-center min-h-[47px] w-full overflow-hidden rounded-full px-4 py-3 bg-grey-100 border-2">
+    <div className="flex-center min-h-[47px] w-full overflow-hidden rounded-full px-4 py-2 bg-grey-100 border-2">
       <Image
         src="/assets/icons/search.svg"
         alt="search"

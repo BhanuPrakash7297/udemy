@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Separator } from "../ui/separator";
 import Search from "../Search";
 import Dropdown from "../Dropdown";
+import MyLearningDropDown from "../MyLearningDropDown";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -36,7 +37,7 @@ export const Navbar = () => {
         <div>
           <Dropdown firstName="Tech" lastName="Udemy" />
         </div>
-        <div>My Learning</div>
+        <div><MyLearningDropDown firstName="My"  lastName="Learning" /></div>
         <div className="flex justify-center items-center gap-5">
           <div>
             <Heart />

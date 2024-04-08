@@ -23,10 +23,7 @@ const config = {
           100: '#f7f9fa',
           500:'#2d2f31' // Subdued - color name in figma
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
+        primary:'#5624d0',
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
