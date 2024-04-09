@@ -1,6 +1,7 @@
-import path from 'path';
+// next.config.js
+/** @type {import('next').NextConfig} */
 
-const __dirname = new URL('.', import.meta.url).pathname;
+const path = require('path');
 
 const nextConfig = {
     webpack: (config) => {
@@ -8,8 +9,9 @@ const nextConfig = {
             ...config.resolve.alias,
             '@': path.resolve(__dirname, './'),
         };
+
         return config;
     },
 };
-export default nextConfig;
 
+module.exports = nextConfig;
