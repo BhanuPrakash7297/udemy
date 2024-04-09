@@ -1,5 +1,4 @@
-
-import { Navbar } from "@/components/Navbar/Navbar";
+import { Navbar } from "@/components/Navbar/navbar";
 import React from "react";
 
 export default function HomeLayout({

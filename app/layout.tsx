@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar/Navbar";
+import { Navbar } from "@/components/Navbar/navbar";
 import { Hero } from "@/components/Hero/hero";
 import { Card } from "@/components/Card/card";
 import { SliderCourse } from "@/components/courseSlider/slidercourse";
