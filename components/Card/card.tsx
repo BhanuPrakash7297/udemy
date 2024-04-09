@@ -1,10 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
 
 export const Card = () => {
   return (
@@ -23,7 +18,6 @@ export const Card = () => {
             <div className='card-rating flex'>
               <span>4.5</span>
               <div className="flex items-center">
-                {/* Stars SVGs */}
               </div>
               <span>(1,696)</span>
             </div>

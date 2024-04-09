@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import {
   HoverCard,
@@ -7,15 +7,20 @@ import {
 } from "@/components/ui/hover-card"
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Dropdown = ({firstName,lastName}:{firstName:string,lastName:string}) => {
+  const router=useRouter();
+  
+  const onClick=()=>{
+    return router.push(`/${firstName}-${lastName}`);
+  }
+
   return (
     <HoverCard>
       <HoverCardTrigger>
-        <div>
-          <Link href={"/"} className="flex gap-1">
-            <span>{firstName}</span>
-            <span>{lastName}</span>
-          </Link>
+        <div className="flex gap-1 cursor-pointer hover:text-[#5624d0]" onClick={onClick}>
+          <span>{firstName}</span>
+          <span>{lastName}</span>
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="mt-8 bg-white">

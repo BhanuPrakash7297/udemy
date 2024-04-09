@@ -10,32 +10,37 @@ import { Progress } from "@/components/ui/progress";
 import Link from 'next/link';
 import Image from 'next/image';
 import { PurchasedCourses } from '@/constants';
+import { Button } from './ui/button';
+import { useRouter } from 'next/navigation';
 
 const MyLearningDropDown = ({
   firstName,
   lastName,
-  title
 }: {
   firstName: string;
   lastName: string;
-  title:string;
 }) => {
-
+    const router=useRouter();
     const [progress, setProgress] = React.useState(13);
 
     React.useEffect(() => {
       const timer = setTimeout(() => setProgress(66), 500);
       return () => clearTimeout(timer);
     }, []);
- 
+
+ const onClick = () => {
+   return router.push(`/${firstName}-${lastName}`);
+ };
+
   return (
     <HoverCard>
       <HoverCardTrigger>
-        <div>
-          <Link href={"/"} className="flex gap-1">
-            <span>{firstName}</span>
-            <span>{lastName}</span>
-          </Link>
+        <div
+          className="flex gap-1 cursor-pointer hover:text-[#5624d0]"
+          onClick={onClick}
+        >
+          <span>{firstName}</span>
+          <span>{lastName}</span>
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="mt-8 bg-white w-[300px] flex flex-col gap-2 p-0 filter brightness-120">
@@ -53,7 +58,9 @@ const MyLearningDropDown = ({
                 height={80}
               />
               <div className="flex flex-col">
-                <p className='font-bold text-[.8rem] leading-normal'>{val.title}</p>
+                <p className="font-bold text-[.8rem] leading-normal">
+                  {val.title}
+                </p>
                 <div>
                   <Progress
                     value={50}
