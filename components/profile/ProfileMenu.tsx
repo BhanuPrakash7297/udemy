@@ -17,7 +17,7 @@ const ProfileMenu = () => {
           </div>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent className="mt-2 mr-4 bg-white w-[300px] p-0 flex flex-col filter brightness-120">
+      <HoverCardContent className="mt-4 mr-4 bg-white w-[300px] p-0 flex flex-col filter brightness-120">
         <div
           className="flex items-center justify-center gap-2 w-full"
           style={{ borderBottom: "1px solid #d1d7dc" }}
