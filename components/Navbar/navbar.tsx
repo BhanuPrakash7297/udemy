@@ -1,25 +1,13 @@
 "use client"
 
-
 import { Bell, Heart, ShoppingCart } from "lucide-react";
-import { Form,FormField,FormItem,FormLabel,FormControl,FormDescription,FormMessage} from "../ui/form";
-import { Input } from "../ui/input";
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { useState } from "react";
-import { Separator } from "../ui/separator";
 import Search from "../Search";
 import Dropdown from "../Dropdown";
 import MyLearningDropDown from "../MyLearningDropDown";
 import Image from "next/image";
-
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-})
+import ProfileMenu from "../profile/ProfileMenu";
 
 export const Navbar = () => {
-   const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <div className="flex-col">
@@ -28,7 +16,7 @@ export const Navbar = () => {
         style={{ fontSize: "14px" }}
       >
         <Image src='/assets/logo/logo-udemy.svg' objectFit="cover" alt='udemy logo..' width={80} height={80}/>
-        <div>Categories</div>
+        <div className="cursor-pointer">Categories</div>
         <Search placeholder="Search Course...." />
         <div className="hidden lg:flex">
           <Dropdown firstName="udemy" lastName="Business" />
@@ -38,18 +26,21 @@ export const Navbar = () => {
         </div>
         <div><MyLearningDropDown firstName="My"  lastName="Learning" /></div>
         <div className="flex justify-center items-center gap-5">
-          <div>
+          <div className="cursor-pointer">
             <Heart />
           </div>
-          <div>
+          <div className="cursor-pointer">
             <ShoppingCart />
           </div>
-          <div>
+          <div className="curosr-pointer">
             <Bell />
           </div>
-          <div>Profile</div>
+          <div className="cursor-pointer"><ProfileMenu/></div>
         </div>
       </div>
     </div>
   );
 };
+
+
+
